@@ -5,6 +5,7 @@ int main() {
   int i, j, temp;
   
   int size;
+  cout << "Enter the size of array : ";
   cin >> size;
   // Accepting the size of array and array elements
   int a[size];
