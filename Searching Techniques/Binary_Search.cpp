@@ -3,16 +3,22 @@ using namespace std;
 
 int main()
 {
-    int i, arr[10], num, first, last, middle;
-    cout<<"Enter 10 Elements (in ascending order): ";
-    for(i=0; i<10; i++)
+    int i, size, num, first, last, middle;
+  
+    cout<<"Enter the size of array : ";
+    cin>>size;
+    int arr[size];
+    
+    cout<<"Enter Elements (in ascending order): ";              // You can also use a sorting algorithm to sort the array and then search
+    for(i=0; i<size; i++)
         cin>>arr[i];
   
     cout<<"\nEnter Element to be Search: ";
     cin>>num;
+  
     first = 0;
-    last = 9;
-    middle = (first+last)/2;
+    last = size-1;
+    middle = ((last-first)/2)+first;        // To manage the long integers Eg : 1225874523
     while(first <= last)
     {
         if(arr[middle]<num)
@@ -24,11 +30,27 @@ int main()
         }
         else
             last = middle-1;
-        middle = (first+last)/2;
+        
+        middle = ((last-first)/2)+first;
     }
   
     if(first>last)
         cout<<"\nThe number, "<<num<<" is not found in given Array";
     cout<<endl;
+    
     return 0;
 }
+
+
+/*
+
+Time Complexity :
+                    Best Case : O(1)
+                    Average Case : O(logN)
+                    Worst Case : O(logN)
+
+Space Complexity : 
+                    O(1) for iterative
+                    O(logN) for recursiv
+
+*/
