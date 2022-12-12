@@ -3,6 +3,7 @@ using namespace std;
 
 int main() {
   int i, j, temp;
+  
   int size;
   cin >> size;
   // Accepting the size of array and array elements
@@ -10,12 +11,14 @@ int main() {
   for(int i=0; i<size; i++) {
     cin >> a[i];
   }
+  
   // Display the array
   cout << "Input list is ...\n";
   for (i = 0; i < size; i++) {
     cout << a[i] << "\t";
   }
   cout << endl;
+  
   // Swapping of elements is done here
   for (i = 0; i < size; i++) {
     for (j = i + 1; j < size; j++) {
@@ -34,3 +37,9 @@ int main() {
   }
   return 0;
 }
+
+
+/*
+Time Complexity : O(n^2)
+Space Complexity : O(1)
+*/
